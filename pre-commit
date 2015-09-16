@@ -7,7 +7,7 @@ fi
 if git rev-parse --verify HEAD >/dev/null 2>&1; then
     version=1
 else
-    version=$(git rev-list --count HEAD)
+    version=$(( $(git rev-list --count HEAD) + 1 ))
 fi
 
 branch=$(git rev-parse --abbrev-ref HEAD)
